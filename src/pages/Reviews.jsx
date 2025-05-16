@@ -122,7 +122,7 @@ export default function Reviews({ bookId }) {
         return (
           <div key={r.id} className="review">
             <div className="review-header">
-              <img src={r.user_avatar || '/images/avatarka.png'} alt="avatar" className="avatar" />
+              <img src={r.user_avatar || '/libro-by-frontend/images/avatarka.png'} alt="avatar" className="avatar" />
               <span className="username">{shortName}</span>
               <span className="stars">{'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}</span>
             </div>
