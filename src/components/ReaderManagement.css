@@ -1,0 +1,205 @@
+/* Основной контейнер */
+.reader-management {
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Заголовок */
+.reader-management h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Поле поиска */
+.reader-management input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f57c00;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Список пользователей */
+.reader-management ul {
+    list-style: none;
+    padding: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.reader-management li {
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.reader-management li:hover {
+    background: #f57c00;
+    color: white;
+}
+
+/* Форма аренды */
+.rental-form {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff5e6;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.rental-form h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Поля ввода */
+.rental-form input,
+.rental-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Кнопка "Оформить аренду" */
+.btn {
+    padding: 12px 20px;
+    border: 2px solid #f57c00;
+    background: transparent;
+    color: #f57c00;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #f57c00;
+    color: white;
+}
+
+/* Активные аренды */
+.rental-form ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.rental-form li {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rental-form li button {
+    padding: 6px 12px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rental-form li button:hover {
+    background: #c82333;
+}
+.rental-form {
+    position: relative; /* ✅ Контейнер для списка */
+  }
+  
+  .suggestions {
+    position: absolute; /* ✅ Закрепляем под полем ввода */
+    top: 19%; /* ✅ Размещаем сразу после поля ввода */
+    left: 19px; /* ✅ Выравниваем с полем */
+    width: calc(100% - 6%); /* ✅ Учитываем отступы */
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+  
+  .suggestions li {
+    padding: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .suggestions li:hover {
+    background: #f0f0f0;
+  }
+  
+/* 📌 Блок с запросами */
+.rental-request-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  
+  /* 📌 Кнопки запросов */
+  .request-btn {
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-left: 10px; /* ✅ Добавляем отступ */
+  }
+  
+  /* 📌 Кнопка "Принять" */
+  .request-approve {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .request-approve:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  /* 📌 Кнопка "Отклонить" */
+  .request-deny {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .request-deny:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+  }
+  
+  /* 📌 Адаптивность */
+  @media (max-width: 600px) {
+    .rental-request-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .request-btn {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+  

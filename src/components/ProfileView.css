@@ -1,0 +1,115 @@
+/* Общий стиль для профиля */
+.profile-view {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.profile-card {
+  max-width: 450px;
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-right: 20px;
+}
+
+/* Секция с аватаром */
+.editable-avatar {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+
+/* Иконка редактирования */
+.edit-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+  background: white;
+  border-radius: 50%;
+  padding: 3px;
+  cursor: pointer;
+  border: 2px solid #aaa;
+}
+
+.edit-icon img {
+  width: 23px;
+  height: 23px;
+}
+
+/* Информация о пользователе */
+.profile-info label {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.profile-view-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15pt;
+  margin-bottom: 18px;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-name, .user-email {
+  font-size: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Поля для ввода и кнопки */
+.profile-info input, .profile-password input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #2979ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: #1565c0;
+}
+
+.logout {
+  background-color: #ff7043; /* Оранжевый для выхода */
+}
+
+.logout:hover {
+  background-color: #e64a19;
+}
+
+.logout-section {
+  margin-top: 20px;
+}

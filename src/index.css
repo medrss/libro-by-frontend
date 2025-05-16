@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Bahnschrift';
+  src: url('./assets/fonts/Bahnschrift.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bahnschrift Light SemiCondensed', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

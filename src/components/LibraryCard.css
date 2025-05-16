@@ -1,0 +1,72 @@
+.library-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .library-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .library-card p {
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  table th {
+    background-color: #f57c00;
+    color: white;
+    font-weight: 600;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  table td:first-child {
+    font-weight: 500;
+  }
+  
+  table td:nth-child(2),
+  table td:nth-child(3) {
+    text-align: center;
+  }
+  
+  table td:nth-child(4) {
+    text-align: center;
+    font-weight: 600;
+    color: #4caf50;
+  }
+  
+  table td:nth-child(4):not(:empty) {
+    color: #e74c3c;
+  }
+  
+  .library-card p,
+  table {
+    transition: all 0.3s ease;
+  }
+  

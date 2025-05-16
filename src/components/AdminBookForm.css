@@ -1,0 +1,82 @@
+/* Основной контейнер формы */
+.admin-book-form {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Заголовок формы */
+.admin-book-form h3 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Поля ввода */
+.admin-book-form input,
+.admin-book-form textarea,
+.admin-book-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.admin-book-form input:focus,
+.admin-book-form textarea:focus,
+.admin-book-form select:focus {
+    border-color: #f57c00;
+}
+
+/* Текстовое поле для описания */
+.admin-book-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Чекбоксы */
+.admin-book-form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.admin-book-form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* Поле загрузки изображения */
+.admin-book-form input[type="file"] {
+    padding: 5px;
+    border: none;
+}
+
+/* Кнопка "Добавить книгу" */
+.btn {
+    padding: 12px 20px;
+    border: 2px solid #f57c00;
+    background: transparent;
+    color: #f57c00;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #f57c00;
+    color: white;
+}
