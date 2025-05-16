@@ -33,7 +33,7 @@ export default function Header() {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/cart', {
+      const res = await fetch('https://libro-by-backend.onrender.com/api/cart', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       

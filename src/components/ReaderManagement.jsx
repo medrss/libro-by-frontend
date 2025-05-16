@@ -15,7 +15,7 @@ export default function ReaderManagement({ token }) {
 
   // 📌 **Загрузка списка читателей**
   useEffect(() => {
-    fetch('http://localhost:3000/api/readers', {
+    fetch('https://libro-by-backend.onrender.com/api/readers', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -25,7 +25,7 @@ export default function ReaderManagement({ token }) {
 
   // 📌 **Загрузка запросов на аренду**
   useEffect(() => {
-    fetch('http://localhost:3000/api/rental-requests', {
+    fetch('https://libro-by-backend.onrender.com/api/rental-requests', {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -41,7 +41,7 @@ export default function ReaderManagement({ token }) {
     }
 
     const timeout = setTimeout(() => {
-      fetch(`http://localhost:3000/api/books/search/${bookQuery}`, {
+      fetch(`https://libro-by-backend.onrender.com/api/books/search/${bookQuery}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -54,7 +54,7 @@ export default function ReaderManagement({ token }) {
 
   // 📌 **Принять или отклонить запрос**
   const updateRentalRequest = async (requestId, status) => {
-    const res = await fetch(`http://localhost:3000/api/rental-requests/${requestId}`, {
+    const res = await fetch(`https://libro-by-backend.onrender.com/api/rental-requests/${requestId}`, {
       method: 'PUT',
       headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
@@ -72,7 +72,7 @@ export default function ReaderManagement({ token }) {
   const handleCreateRental = async () => {
     if (!selectedReader || !book_id || !return_date) return;
 
-    const res = await fetch('http://localhost:3000/api/rentals', {
+    const res = await fetch('https://libro-by-backend.onrender.com/api/rentals', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export default function ReaderManagement({ token }) {
 
   // 📌 **Загрузка активных аренд пользователя**
   const fetchActiveRentals = async (user_id) => {
-    const res = await fetch(`http://localhost:3000/api/rentals/user/${user_id}`, {
+    const res = await fetch(`https://libro-by-backend.onrender.com/api/rentals/user/${user_id}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     const data = await res.json();
@@ -109,7 +109,7 @@ export default function ReaderManagement({ token }) {
 
   // 📌 **Закрытие аренды**
   const closeRental = async (rentalId) => {
-    const res = await fetch(`http://localhost:3000/api/rentals/${rentalId}/close`, {
+    const res = await fetch(`https://libro-by-backend.onrender.com/api/rentals/${rentalId}/close`, {
       method: 'PUT',
       headers: { 'Authorization': `Bearer ${token}` }
     });

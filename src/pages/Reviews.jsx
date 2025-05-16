@@ -13,7 +13,7 @@ export default function Reviews({ bookId }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/reviews/book/${bookId}`)
+    axios.get(`https://libro-by-backend.onrender.com/api/reviews/book/${bookId}`)
       .then(res => setReviews(res.data.reviews || []))
       .catch(error => console.error("Ошибка загрузки отзывов:", error));
   }, [bookId]);
@@ -35,7 +35,7 @@ export default function Reviews({ bookId }) {
     formData.append('book_id', bookId);
   
     try {
-      const res = await axios.post('http://localhost:3000/api/reviews', formData, {
+      const res = await axios.post('https://libro-by-backend.onrender.com/api/reviews', formData, {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
   

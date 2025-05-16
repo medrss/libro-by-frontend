@@ -11,7 +11,7 @@ export default function Cart() {
   useEffect(() => {
     if (!user) return;
 
-    fetch('http://localhost:3000/api/cart', {
+    fetch('https://libro-by-backend.onrender.com0/api/cart', {
       headers: { 'Authorization': `Bearer ${user.token}` }
     })
       .then(res => res.json())
@@ -33,7 +33,7 @@ export default function Cart() {
     if (quantity < 1) return;
 
     try {
-      const res = await fetch('http://localhost:3000/api/cart/update', {
+      const res = await fetch('https://libro-by-backend.onrender.com/api/cart/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export default function Cart() {
   // 📌 Удаление книги из корзины
   const removeFromCart = async (book_id) => {
     try {
-      const res = await fetch('http://localhost:3000/api/cart/remove', {
+      const res = await fetch('https://libro-by-backend.onrender.com/api/cart/remove', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ export default function Cart() {
       <div className="cart-items">
         {cartItems.map(item => (
           <div key={item.book_id} className="cart-item">
-            <img src={`http://localhost:3000${item.image}`} alt={item.title} className="cart-item-image" />
+            <img src={`https://libro-by-backend.onrender.com${item.image}`} alt={item.title} className="cart-item-image" />
             <div className="cart-item-info">
               <h3>{item.title}</h3>
               <p>Цена: {Number(item.price).toFixed(2)} руб.</p>

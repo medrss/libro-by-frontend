@@ -7,7 +7,7 @@ export default function LibraryCard({ token }) {
   useEffect(() => {
     const fetchRentals = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/my-rentals', {
+        const res = await fetch('https://libro-by-backend.onrender.com/api/my-rentals', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await res.json();

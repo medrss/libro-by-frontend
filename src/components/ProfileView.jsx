@@ -7,7 +7,7 @@ import LibraryCard from './LibraryCard';
 import AdminBookForm from "./AdminBookForm";
 import editIcon from '../assets/icons/edit.png';
 
-export default function ProfileView({ closeModal }) {
+export default function ProfileView() {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [profile, setProfile] = useState({ fullName: '', email: '', roleId: '', profilePicture: '' });
@@ -20,7 +20,7 @@ export default function ProfileView({ closeModal }) {
     if (!user) return;
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/profile', {
+        const response = await fetch('https://libro-by-backend.onrender.com/api/profile', {
           headers: {
             'Authorization': `Bearer ${user.token}`
           }
@@ -44,7 +44,7 @@ export default function ProfileView({ closeModal }) {
   const handleProfileUpdate = async () => {
     if (!user) return;
     try {
-      const response = await fetch('http://localhost:3000/api/profile', {
+      const response = await fetch('https://libro-by-backend.onrender.com/api/profile', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export default function ProfileView({ closeModal }) {
   const handleChangePassword = async () => {
     if (!user) return;
     try {
-      const response = await fetch('http://localhost:3000/api/profile/password', {
+      const response = await fetch('https://libro-by-backend.onrender.com/api/profile/password', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function ProfileView({ closeModal }) {
     const formData = new FormData();
     formData.append('avatar', file);
     try {
-      const response = await fetch('http://localhost:3000/api/profile/avatar', {
+      const response = await fetch('https://libro-by-backend.onrender.com/api/profile/avatar', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${user.token}`
@@ -120,7 +120,7 @@ export default function ProfileView({ closeModal }) {
   };
 
   const avatarSrc = profile.profilePicture
-  ? `http://localhost:3000/uploads/avatars/${profile.profilePicture}`
+  ? `https://libro-by-backend.onrender.com/uploads/avatars/${profile.profilePicture}`
   : '/images/avatarka.png';
 
   return (

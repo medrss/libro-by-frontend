@@ -28,7 +28,7 @@ export default function ProfileModal({ closeModal }) {
       : { email, password, fullName };
   
     try {
-      const response = await fetch(`http://localhost:3000/api/auth/${endpoint}`, {
+      const response = await fetch(`https://libro-by-backend.onrender.com/api/auth/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

@@ -20,7 +20,7 @@ export default function AdminBookForm({ token }) {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/categories')
+    fetch('https://libro-by-backend.onrender.com/api/categories')
       .then(res => res.json())
       .then(data => setAllCategories(data))
       .catch(err => console.error('Ошибка загрузки категорий:', err));
@@ -84,7 +84,7 @@ export default function AdminBookForm({ token }) {
       }
     }
 
-    const res = await fetch('http://localhost:3000/api/books', {
+    const res = await fetch('https://libro-by-backend.onrender.com/api/books', {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${token}` },
       body: bookData

@@ -29,7 +29,7 @@ export default function BookDetails() {
   
     try {
       // 📌 Получаем текущую корзину
-      const cartRes = await fetch('http://localhost:3000/api/cart', {
+      const cartRes = await fetch('https://libro-by-backend.onrender.com/api/cart', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
       const cartData = await cartRes.json();
@@ -39,7 +39,7 @@ export default function BookDetails() {
   
       // 📌 Если товар уже в корзине, увеличиваем количество
       if (existingItem) {
-        const res = await fetch('http://localhost:3000/api/cart/update', {
+        const res = await fetch('https://libro-by-backend.onrender.com/api/cart/update', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export default function BookDetails() {
         }
       } else {
         // 📌 Если товара нет в корзине, добавляем его
-        const res = await fetch('http://localhost:3000/api/cart/add', {
+        const res = await fetch('https://libro-by-backend.onrender.com/api/cart/add', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export default function BookDetails() {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/api/rental-requests', {
+      const res = await fetch('https://libro-by-backend.onrender.com/api/rental-requests', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export default function BookDetails() {
 
   // 📌 Загрузка книги
   useEffect(() => {
-    fetch(`http://localhost:3000/api/books/${id}`)
+    fetch(`https://libro-by-backend.onrender.com/api/books/${id}`)
       .then(res => {
         if (!res.ok) throw new Error("Книга не найдена");
         return res.json();
@@ -143,7 +143,7 @@ export default function BookDetails() {
 
       <div className="book-details-content">
         <img
-          src={`http://localhost:3000${book.image}`}
+          src={`https://libro-by-backend.onrender.com${book.image}`}
           alt={book.title}
           className="book-details-image"
         />

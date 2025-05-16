@@ -27,7 +27,7 @@ export default function Catalog() {
   }, [location]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/books')
+    axios.get('https://libro-by-backend.onrender.com/api/books')
       .then(response => setBooks(response.data))
       .catch(error => console.error('Ошибка при получении книг:', error));
   }, []);
@@ -126,7 +126,7 @@ export default function Catalog() {
           {filteredBooks.length > 0 ? (
             filteredBooks.map((book, index) => (
               <div className="book-card" key={index}>
-                <img src={`http://localhost:3000${book.image}`} alt={book.title} />
+                <img src={`https://libro-by-backend.onrender.com${book.image}`} alt={book.title} />
                 <p className="book-price">{book.price} руб.</p>
                 <p className="book-title">{book.title}</p>
                 <Link
