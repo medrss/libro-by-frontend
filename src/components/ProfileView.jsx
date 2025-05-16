@@ -121,7 +121,7 @@ export default function ProfileView() {
 
   const avatarSrc = profile.profilePicture
   ? `https://libro-by-backend.onrender.com/uploads/avatars/${profile.profilePicture}`
-  : '/images/avatarka.png';
+  : 'libro-by-frontend/public/images/avatarka.png';
 
   return (
     <div className="profile-view">
