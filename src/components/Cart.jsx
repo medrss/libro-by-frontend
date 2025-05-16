@@ -11,7 +11,7 @@ export default function Cart() {
   useEffect(() => {
     if (!user) return;
 
-    fetch('https://libro-by-backend.onrender.com0/api/cart', {
+    fetch('https://libro-by-backend.onrender.com/api/cart', {
       headers: { 'Authorization': `Bearer ${user.token}` }
     })
       .then(res => res.json())
