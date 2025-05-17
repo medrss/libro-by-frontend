@@ -206,11 +206,18 @@
   .book-details-content {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .book-details-image {
+    margin: 0 auto;
   }
 
   .book-status {
-    font-size: 18px;
+    font-size: 16px;
     gap: 15px;
+    justify-content: center;
   }
 
   .action-button {
@@ -227,10 +234,11 @@
   }
 
   .back-button {
-    position: absolute;
-    width: 30%;
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 15px;
+    position: relative;
+    width: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 0 20px 0;
+    align-self: flex-start;
   }
 }
