@@ -118,12 +118,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
 }
 
 /* Стиль каждой ссылки */
 .mobile-link {
-  font-size: 24px; /* крупный текст */
+  font-size: 25px; /* крупный текст */
   text-decoration: none;
   color: #000;
   font-weight: 600;
@@ -137,14 +137,14 @@
 /* Иконки внизу */
 .mobile-icons {
   display: flex;
-  gap: 32px;
+  gap: 36px;
   margin-top: 40px;
 }
 
 /* Увеличенные иконки */
 .mobile-icons .icon {
-  height: 56px;
-  width: 56px;
+  height: 58px;
+  width: auto;
   cursor: pointer;
 }
 
