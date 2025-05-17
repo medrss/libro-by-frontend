@@ -13,13 +13,24 @@ export default function Catalog() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [activeCategory, setActiveCategory] = useState('');
   const [books, setBooks] = useState([]);
-  const location = useLocation(); // ✅ Получаем текущий URL
+  const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
+  const location = useLocation();
 
-  // Читаем категорию из URL при загрузке страницы
+  const banners = [
+    { img: banner1, text: 'Скидка 30% при покупке 2-ух книг из детской коллекции' },
+    { img: banner2, text: 'Книга за 10 копеек для новых покупателей' },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBannerIndex((prev) => (prev + 1) % banners.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const categoryFromUrl = queryParams.get('category');
-
     if (categoryFromUrl) {
       setSelectedCategory(categoryFromUrl);
       setActiveCategory(categoryFromUrl);
@@ -37,40 +48,41 @@ export default function Catalog() {
       book.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (filterAuthor ? book.author.toLowerCase().includes(filterAuthor.toLowerCase()) : true) &&
       (filterPrice ? book.price <= parseFloat(filterPrice) : true) &&
-      (!selectedCategory || selectedCategory === 'Все книги' || 
+      (!selectedCategory || selectedCategory === 'Все книги' ||
         book.categories?.some(cat => cat.toLowerCase().includes(selectedCategory.toLowerCase()))
       )
     );
   });
-  
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     setActiveCategory(category);
   };
 
+  const categories = [
+    'Все книги',
+    'Новинки',
+    'Бестселлеры',
+    'Детская литература',
+    'Комиксы и манга',
+    'Фантастика',
+    'Детективы',
+    'Любовные романы',
+    'Психология',
+    'Красота и здоровье',
+    'Успех, мотивация',
+    'Учебные программы',
+    'Книги белорусских издательств',
+    'Медицина',
+    'Доступные для аренды',
+  ];
+
   return (
     <div className="catalog-page fade-in">
       <aside className="catalog-sidebar">
         <h1 className="catalog-title">КАТАЛОГ</h1>
         <nav className="catalog-nav">
-          {[
-            'Все книги',
-            'Новинки',
-            'Бестселлеры',
-            'Детская литература',
-            'Комиксы и манга',
-            'Фантастика',
-            'Детективы',
-            'Любовные романы',
-            'Психология',
-            'Красота и здоровье',
-            'Успех, мотивация',
-            'Учебные программы',
-            'Книги белорусских издательств',
-            'Медицина',
-            'Доступные для аренды',
-          ].map(category => (
+          {categories.map(category => (
             <a
               href="#"
               key={category}
@@ -112,14 +124,22 @@ export default function Catalog() {
         )}
 
         <div className="catalog-banners">
-          <div className="banner">
-            <img src={banner1} alt="Баннер 1" />
-            <p>Скидка 30% при покупке 2-ух книг из детской коллекции</p>
+          <div className="banner fade-banner" key={currentBannerIndex}>
+            <img src={banners[currentBannerIndex].img} alt="Баннер" />
+            <p>{banners[currentBannerIndex].text}</p>
           </div>
-          <div className="banner">
-            <img src={banner2} alt="Баннер 2" />
-            <p>Книга за 10 копеек для новых покупателей</p>
-          </div>
+        </div>
+
+        <div className="catalog-mobile-categories">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`mobile-category-btn ${activeCategory === category ? 'active-mobile-category' : ''}`}
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
         <div className="catalog-books">
