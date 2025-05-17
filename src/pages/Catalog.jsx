@@ -123,17 +123,29 @@ export default function Catalog() {
           </div>
         )}
 
-       <div className="catalog-banners" style={{ position: 'relative', height: '300px' }}>
-        {banners.map((banner, index) => (
-          <div
-            className={`banner fade-banner ${index === currentBannerIndex ? 'show' : ''}`}
-            key={index}
-          >
-            <img src={banner.img} alt={`Баннер ${index + 1}`} />
-            <p>{banner.text}</p>
-          </div>
-        ))}
+    <div className="catalog-banners">
+  {window.innerWidth <= 768 ? (
+    // Мобильная версия: слайдер
+    banners.map((banner, index) => (
+      <div
+        className={`banner fade-banner ${index === currentBannerIndex ? 'show' : ''}`}
+        key={index}
+      >
+        <img src={banner.img} alt={`Баннер ${index + 1}`} />
+        <p>{banner.text}</p>
       </div>
+    ))
+  ) : (
+    // ПК-версия: оба баннера сразу
+    banners.map((banner, index) => (
+      <div className="banner" key={index}>
+        <img src={banner.img} alt={`Баннер ${index + 1}`} />
+        <p>{banner.text}</p>
+      </div>
+    ))
+  )}
+</div>
+
 
        <div className="catalog-mobile-categories">
         {categories.map((category) => (
