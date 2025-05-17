@@ -123,25 +123,29 @@ export default function Catalog() {
           </div>
         )}
 
-        <div className="catalog-banners">
-          <div className="banner fade-banner" key={currentBannerIndex}>
-            <img src={banners[currentBannerIndex].img} alt="Баннер" />
-            <p>{banners[currentBannerIndex].text}</p>
+       <div className="catalog-banners" style={{ position: 'relative', height: '300px' }}>
+        {banners.map((banner, index) => (
+          <div
+            className={`banner fade-banner ${index === currentBannerIndex ? 'show' : ''}`}
+            key={index}
+          >
+            <img src={banner.img} alt={`Баннер ${index + 1}`} />
+            <p>{banner.text}</p>
           </div>
-        </div>
+        ))}
+      </div>
 
-        <div className="catalog-mobile-categories">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`mobile-category-btn ${activeCategory === category ? 'active-mobile-category' : ''}`}
-              onClick={() => handleCategoryClick(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
+       <div className="catalog-mobile-categories">
+        {categories.map((category) => (
+          <button
+            key={category}
+            className={activeCategory === category ? 'active-link' : ''}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
         <div className="catalog-books">
           {filteredBooks.length > 0 ? (
             filteredBooks.map((book, index) => (
