@@ -137,7 +137,7 @@
 /* Иконки внизу */
 .mobile-icons {
   display: flex;
-  gap: 36px;
+  gap: 33px;
   margin-top: 40px;
 }
 
