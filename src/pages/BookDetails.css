@@ -219,4 +219,10 @@
   .book-details {
   padding: 40px;
 }
+.review-header {
+    margin-top: 20px;
+}
+.review {
+  padding: 0px; 
+}
 }
