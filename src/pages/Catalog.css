@@ -202,8 +202,7 @@
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
 }
 
 .fade-banner.show {
