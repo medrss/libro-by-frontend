@@ -64,27 +64,10 @@
   .logo {
     height: 60px;
   }
-
-  .mobile-menu-overlay {
-  position: fixed; /* Фиксируем контейнер */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.95); /* Белый фон с легкой прозрачностью */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  z-index: 1000;
-}
-
 .nav-link {
     font-size: 16px; /* Уменьшаем размер текста */
     padding: 8px 16px; /* Уменьшаем внутренние отступы */
   }
-  
   .nav-icons {
     display: none;
   }
@@ -103,20 +86,32 @@
     cursor: pointer;
   }
 
-  .mobile-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 32px 16px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    z-index: 1000;
-  }
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
 
   .mobile-link {
     font-size: 20px;

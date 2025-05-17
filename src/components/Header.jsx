@@ -74,21 +74,25 @@ export default function Header() {
       <div className="menu-icon" onClick={toggleMobileMenu}>
         <img src={menuIcon} alt="Меню" className="icon" />
       </div>
+      
+ {showMobileMenu && (
+  <div className="mobile-menu">
+    <button className="close-button" onClick={toggleMobileMenu}>✕</button>
 
-      {showMobileMenu && (
-  <div className="mobile-menu-overlay">
     <div className="mobile-links">
-      <NavLink to="/" onClick={toggleMobileMenu}>Главная</NavLink>
-      <NavLink to="/catalog" onClick={toggleMobileMenu}>Каталог книг</NavLink>
-      <NavLink to="/contacts" onClick={toggleMobileMenu}>Контакты</NavLink>
-      <NavLink to="/about" onClick={toggleMobileMenu}>О компании</NavLink>
+      <NavLink to="/" className="mobile-link" onClick={toggleMobileMenu}>Главная</NavLink>
+      <NavLink to="/catalog" className="mobile-link" onClick={toggleMobileMenu}>Каталог книг</NavLink>
+      <NavLink to="/contacts" className="mobile-link" onClick={toggleMobileMenu}>Контакты</NavLink>
+      <NavLink to="/about" className="mobile-link" onClick={toggleMobileMenu}>О компании</NavLink>
     </div>
+
     <div className="mobile-icons">
       <img src={profileIcon} alt="Профиль" className="icon" onClick={handleProfileClick} />
       <img src={cartIcon} alt="Корзина" className="icon" onClick={handleCartClick} />
     </div>
   </div>
 )}
+
     </header>
   );
 }
