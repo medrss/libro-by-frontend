@@ -201,3 +201,51 @@
 .rental-request-form button:last-of-type:hover {
   background-color: #c82333;
 }
+
+@media (max-width: 768px) {
+  .book-details {
+    padding: 30px 15px;
+  }
+
+  .book-details-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .book-details-info h1 {
+    font-size: 26px;
+  }
+
+  .book-meta {
+    font-size: 18px;
+  }
+
+  .book-price-details {
+    font-size: 32px;
+  }
+
+  .book-status {
+    font-size: 16px;
+    gap: 15px;
+  }
+
+  .action-button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .rental-request-form input[type="date"] {
+    width: 100%;
+  }
+
+  .rental-request-form button {
+    width: 100%;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+}
