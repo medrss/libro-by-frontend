@@ -6,11 +6,17 @@ import cartIcon from '/images/cart.png';
 import { useState, useContext } from 'react';
 import { UserContext } from "../contexts/UserContext"; 
 import ProfileModal from './ProfileModal'; 
+import menuIcon from '/images/menu.png';
 
 export default function Header() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext); // Получаем пользователя
   const [showProfileModal, setShowProfileModal] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const toggleMobileMenu = () => {
+  setShowMobileMenu(!showMobileMenu);
+};
 
   // 📌 **Открытие/закрытие модального окна профиля**
   const handleProfileClick = () => {
@@ -76,6 +82,18 @@ export default function Header() {
       </div>
 
       {showProfileModal && <ProfileModal closeModal={closeProfileModal} />}
+      <div className="menu-icon" onClick={toggleMobileMenu}>
+        <img src={menuIcon} alt="Меню" className="icon" />
+      </div>
+
+      {showMobileMenu && (
+  <div className="mobile-menu">
+    <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Главная</NavLink>
+    <NavLink to="/catalog" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Каталог книг</NavLink>
+    <NavLink to="/contacts" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Контакты</NavLink>
+    <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>О компании</NavLink>
+  </div>
+)}
     </header>
   );
 }

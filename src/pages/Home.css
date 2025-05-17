@@ -110,16 +110,34 @@
     }
   }
 
-  /* Адаптив */
-  @media (max-width: 768px) {
-    .home-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .text-section,
-    .image-section {
-      width: 100%;
-    }
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    overflow-y: hidden;
   }
+
+  .slogan {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .image-section {
+    justify-content: center;
+  }
+
+  .leaf-container {
+    display: none; /* убрать листья */
+  }
+
+  .book-image {
+    max-width: 70%;
+  }
+}
+
   
