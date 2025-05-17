@@ -191,18 +191,16 @@
   color: white;
 }
 
-/* Анимация */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease forwards;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 .fade-banner {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  width: 90%;
+  width: 100%;
 }
 
 .fade-banner.show {
@@ -210,11 +208,12 @@
   position: relative;
 }
 
-
-@keyframes fadeInUp {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
