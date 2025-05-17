@@ -14,6 +14,7 @@ function App() {
   return (
     <UserProvider>
       <Router>
+        <Router basename="/libro-by-frontend">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,6 +30,7 @@ function App() {
             element={<ProfileView />} 
           />
         </Routes>
+      </Router>
       </Router>
     </UserProvider>
   );

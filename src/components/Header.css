@@ -82,8 +82,9 @@
   }
 
   .menu-img {
-    height: 34px;
+    height: 28px;
     cursor: pointer;
+    color: rgb(241, 143, 23);
   }
 /* Общий контейнер меню */
 .mobile-menu {
