@@ -204,8 +204,8 @@
 
 @media (max-width: 768px) {
   .book-status {
-    font-size: 15px;
-    gap: 15px;
+    font-size: 16px;
+  text-align: center;
   }
   .action-button {
     font-size: 15px;
@@ -216,4 +216,7 @@
   .back-button{
     display: none;
   }
+  .book-details {
+  padding: 40px;
+}
 }
