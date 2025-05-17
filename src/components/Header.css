@@ -64,10 +64,27 @@
   .logo {
     height: 60px;
   }
+
+  .mobile-menu-overlay {
+  position: fixed; /* Фиксируем контейнер */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95); /* Белый фон с легкой прозрачностью */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  z-index: 1000;
+}
+
 .nav-link {
     font-size: 16px; /* Уменьшаем размер текста */
     padding: 8px 16px; /* Уменьшаем внутренние отступы */
   }
+  
   .nav-icons {
     display: none;
   }

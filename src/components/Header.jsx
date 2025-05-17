@@ -76,19 +76,19 @@ export default function Header() {
       </div>
 
       {showMobileMenu && (
-        <div className="mobile-menu">
-          <div className="mobile-links">
-            <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Главная</NavLink>
-            <NavLink to="/catalog" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Каталог книг</NavLink>
-            <NavLink to="/contacts" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Контакты</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>О компании</NavLink>
-          </div>
-          <div className="mobile-icons">
-            <img src={profileIcon} alt="Профиль" className="icon" onClick={handleProfileClick} />
-            <img src={cartIcon} alt="Корзина" className="icon" onClick={handleCartClick} />
-          </div>
-        </div>
-      )}
+  <div className="mobile-menu-overlay">
+    <div className="mobile-links">
+      <NavLink to="/" onClick={toggleMobileMenu}>Главная</NavLink>
+      <NavLink to="/catalog" onClick={toggleMobileMenu}>Каталог книг</NavLink>
+      <NavLink to="/contacts" onClick={toggleMobileMenu}>Контакты</NavLink>
+      <NavLink to="/about" onClick={toggleMobileMenu}>О компании</NavLink>
+    </div>
+    <div className="mobile-icons">
+      <img src={profileIcon} alt="Профиль" className="icon" onClick={handleProfileClick} />
+      <img src={cartIcon} alt="Корзина" className="icon" onClick={handleCartClick} />
+    </div>
+  </div>
+)}
     </header>
   );
 }
