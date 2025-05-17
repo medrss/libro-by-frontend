@@ -75,7 +75,7 @@ const handleProfileClick = () => {
       {showProfileModal && <ProfileModal closeModal={closeProfileModal} />}
 
       <div className="menu-icon" onClick={toggleMobileMenu}>
-        <img src={menuIcon} alt="Меню" className="icon" />
+        <img src={menuIcon} alt="Меню" className="icon-menu" />
       </div>
 
  {showMobileMenu && (

@@ -80,7 +80,9 @@
     display: block; /* Показываем значок меню */
     cursor: pointer;
   }
-
+.icon-menu{
+  height: 35px;
+}
   .menu-img {
     height: 28px;
     cursor: pointer;
