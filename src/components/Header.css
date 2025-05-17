@@ -64,7 +64,10 @@
   .logo {
     height: 60px;
   }
-
+.nav-link {
+    font-size: 16px; /* Уменьшаем размер текста */
+    padding: 8px 16px; /* Уменьшаем внутренние отступы */
+  }
   .nav-icons {
     display: none;
   }
@@ -73,8 +76,9 @@
     display: none;
   }
 
-  .menu-icon {
-    display: block;
+.menu-icon {
+    display: block; /* Показываем значок меню */
+    cursor: pointer;
   }
 
   .menu-img {
