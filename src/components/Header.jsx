@@ -18,20 +18,22 @@ export default function Header() {
     setShowMobileMenu(!showMobileMenu);
   };
 
-  const handleProfileClick = () => {
-    if (user) {
-      navigate('/profile');
-      setShowMobileMenu(!showMobileMenu);
-    } else {
-      setShowProfileModal(true);
-    }
-  };
+const handleProfileClick = () => {
+  setShowMobileMenu(false); // Закрыть мобильное меню
+
+  if (user) {
+    navigate('/profile');
+  } else {
+    setShowProfileModal(true);
+  }
+};
 
   const closeProfileModal = () => {
     setShowProfileModal(false);
   };
 
   const handleCartClick = async () => {
+    setShowMobileMenu(false);
     if (!user) {
       alert("Вы должны войти в аккаунт!");
       return;
@@ -47,7 +49,6 @@ export default function Header() {
       if (cartItems.length === 0) {
         alert("Корзина пустая!");
       } else {
-        setShowMobileMenu(!showMobileMenu);
         navigate('/cart');
       }
     } catch (error) {
