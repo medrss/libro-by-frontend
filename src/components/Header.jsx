@@ -74,7 +74,7 @@ export default function Header() {
       <div className="menu-icon" onClick={toggleMobileMenu}>
         <img src={menuIcon} alt="Меню" className="icon" />
       </div>
-      
+
  {showMobileMenu && (
   <div className="mobile-menu">
     <button className="close-button" onClick={toggleMobileMenu}>✕</button>
