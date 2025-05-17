@@ -21,6 +21,7 @@ export default function Header() {
   const handleProfileClick = () => {
     if (user) {
       navigate('/profile');
+      setShowMobileMenu(!showMobileMenu);
     } else {
       setShowProfileModal(true);
     }
@@ -46,6 +47,7 @@ export default function Header() {
       if (cartItems.length === 0) {
         alert("Корзина пустая!");
       } else {
+        setShowMobileMenu(!showMobileMenu);
         navigate('/cart');
       }
     } catch (error) {

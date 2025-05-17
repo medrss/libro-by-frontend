@@ -119,8 +119,8 @@
   }
 
   .slogan {
-    font-size: 2.7rem;
-    text-align: left;
+    font-size: 2.8rem;
+    text-align: center
   }
 
   .description {
@@ -136,7 +136,7 @@
   }
 
   .book-image {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
