@@ -10,20 +10,19 @@ import menuIcon from '/images/menu.png';
 
 export default function Header() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext); // Получаем пользователя
+  const { user } = useContext(UserContext);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const toggleMobileMenu = () => {
-  setShowMobileMenu(!showMobileMenu);
-};
+    setShowMobileMenu(!showMobileMenu);
+  };
 
-  // 📌 **Открытие/закрытие модального окна профиля**
   const handleProfileClick = () => {
     if (user) {
-      navigate('/profile'); // ✅ Если пользователь авторизован, переходим в профиль
+      navigate('/profile');
     } else {
-      setShowProfileModal(true); // ✅ Иначе показываем модалку входа
+      setShowProfileModal(true);
     }
   };
 
@@ -31,7 +30,6 @@ export default function Header() {
     setShowProfileModal(false);
   };
 
-  // 📌 **Открытие корзины**
   const handleCartClick = async () => {
     if (!user) {
       alert("Вы должны войти в аккаунт!");
@@ -42,13 +40,13 @@ export default function Header() {
       const res = await fetch('https://libro-by-backend.onrender.com/api/cart', {
         headers: { 'Authorization': `Bearer ${user.token}` }
       });
-      
+
       const cartItems = await res.json();
 
       if (cartItems.length === 0) {
         alert("Корзина пустая!");
       } else {
-        navigate('/cart'); // ✅ Перенаправляем на страницу корзины
+        navigate('/cart');
       }
     } catch (error) {
       console.error("Ошибка загрузки корзины:", error);
@@ -67,33 +65,30 @@ export default function Header() {
       </nav>
 
       <div className="nav-icons">
-        <img
-          src={profileIcon}
-          alt="Профиль"
-          className="icon"
-          onClick={handleProfileClick} 
-        />
-        <img
-          src={cartIcon}
-          alt="Корзина"
-          className="icon"
-          onClick={handleCartClick} 
-        />
+        <img src={profileIcon} alt="Профиль" className="icon" onClick={handleProfileClick} />
+        <img src={cartIcon} alt="Корзина" className="icon" onClick={handleCartClick} />
       </div>
 
       {showProfileModal && <ProfileModal closeModal={closeProfileModal} />}
+
       <div className="menu-icon" onClick={toggleMobileMenu}>
         <img src={menuIcon} alt="Меню" className="icon" />
       </div>
 
       {showMobileMenu && (
-  <div className="mobile-menu">
-    <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Главная</NavLink>
-    <NavLink to="/catalog" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Каталог книг</NavLink>
-    <NavLink to="/contacts" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Контакты</NavLink>
-    <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>О компании</NavLink>
-  </div>
-)}
+        <div className="mobile-menu">
+          <div className="mobile-links">
+            <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Главная</NavLink>
+            <NavLink to="/catalog" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Каталог книг</NavLink>
+            <NavLink to="/contacts" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>Контакты</NavLink>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={toggleMobileMenu}>О компании</NavLink>
+          </div>
+          <div className="mobile-icons">
+            <img src={profileIcon} alt="Профиль" className="icon" onClick={handleProfileClick} />
+            <img src={cartIcon} alt="Корзина" className="icon" onClick={handleCartClick} />
+          </div>
+        </div>
+      )}
     </header>
   );
 }
