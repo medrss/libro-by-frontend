@@ -203,14 +203,17 @@
 }
 
 @media (max-width: 768px) {
-    .book-status {
-      font-size: 15px;
-      gap: 15px;
-    }
+  .book-status {
+    font-size: 15px;
+    gap: 15px;
+  }
   .action-button {
     font-size: 15px;
   }
 .username {
     font-size: 13pt;
+  }
+  .back-button{
+    display: none;
   }
 }
