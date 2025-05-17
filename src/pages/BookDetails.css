@@ -203,42 +203,14 @@
 }
 
 @media (max-width: 768px) {
-  .book-details-content {
-    flex-direction: column;
-    align-items: left;
-    text-align: left;
-    gap: 20px;
-  }
-
-  .book-details-image {
-    margin: 0 auto;
-  }
-
-  .book-status {
-    font-size: 16px;
-    gap: 15px;
-  }
-
+    .book-status {
+      font-size: 15px;
+      gap: 15px;
+    }
   .action-button {
-    width: 100%;
-    font-size: 16px;
+    font-size: 15px;
   }
-
-  .rental-request-form input[type="date"] {
-    width: 100%;
-  }
-
-  .rental-request-form button {
-    width: 100%;
-  }
-
-  .back-button {
-    position: relative;
-    width: auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 0 0 20px 0;
-    align-self: flex-start;
-    margin-left: 1rem;
+.username {
+    font-size: 13pt;
   }
 }
